@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="Project MANTA - Advanced Flight Simulation">
+    <title>Project MANTA - Deep Black Operations</title>
+    <link rel="manifest" href="/manifest.json">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #000;
+        font-family: 'Orbitron', monospace;
+        touch-action: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      #gameCanvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      }
+      .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #00ffff;
+        text-align: center;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading">
+        <div>PROJECT MANTA</div>
+        <div style="font-size: 14px; margin-top: 10px;">Initializing Deep Black Systems...</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

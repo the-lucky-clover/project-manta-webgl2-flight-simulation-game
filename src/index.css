@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', monospace;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Custom slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: #374151;
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #00ffff;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+input[type="range"]::-moz-range-track {
+  background: #374151;
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #00ffff;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Glowing animations */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+}
+
+/* Pulsing animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Touch feedback */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Loading animation */
+@keyframes loading {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.loading-bar {
+  animation: loading 3s ease-in-out;
+}
+
+/* Holographic text effect */
+.holographic {
+  background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff, #ff0080, #ff8000, #ffff00);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: holographic 3s ease infinite;
+}
+
+@keyframes holographic {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive design fixes */
+@media (max-width: 768px) {
+  .text-2xl { font-size: 1.25rem; }
+  .text-xl { font-size: 1.125rem; }
+  .text-lg { font-size: 1rem; }
+}
+
+/* WebGL Canvas */
+canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Prevent scrolling on mobile */
+html, body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
